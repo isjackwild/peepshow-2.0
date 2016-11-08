@@ -1,0 +1,141 @@
+$edge: 30px;
+
+* {
+	box-sizing: border-box;
+}
+
+body, html {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	background: #000;
+	color: #fff;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 500;
+	font-size: 40px;
+	letter-spacing: -0.02em;
+	-webkit-font-smoothing: antialiased;
+	
+	@media screen and (max-width: 1300px) {
+		font-size: 34px;
+	}
+}
+
+
+body {
+	padding: $edge;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	display: inline-block;
+	border-bottom: 3px solid rgba(#fff, 0.94);
+	line-height: 1em;
+	transition: opacity 0.08s ease;
+}
+
+// a:hover {
+// 	opacity: 0.7;
+// }
+
+.woman, .woman__dress {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.woman__dress {
+	opacity: 0;
+}
+
+.woman {
+	background-image: url('/assets/images/body--yolanda.jpg');
+}
+
+// .woman--blur {
+// 	filter: blur(15px);
+// }
+
+.woman__dress {
+	background-image: url('/assets/images/dress--yolanda.png');
+}
+
+.info {
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	line-height: 1.3em;
+	background: rgba(#e22d00, 1);
+	transition: opacity 0.15s ease, transform 0.15s ease;
+	opacity: 0;
+	padding: $edge;
+	pointer-events: none;
+}
+
+.info--visible {
+	transform: translateZ(0);
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.info__inner p {
+	width: 60%;
+	max-width: 900px;
+	min-width: 300px;
+	margin: 0 0 35px 0;
+}
+
+.select {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	margin-top: 5px;
+}
+
+.select__option {
+	cursor: pointer;
+	opacity: 0.36;
+	line-height: 1em;
+	transition: opacity 0.08s ease;
+	display: inline-block;
+	border-bottom: 3px solid rgba(#fff, 0);
+	margin-bottom: 0.25em;
+}
+
+.select__option:hover, .select__option--selected {
+	opacity: 1;
+	border-bottom: 3px solid rgba(#fff, 0.94);
+	opacity: 1;
+}
+
+.about {
+	position: absolute;
+	cursor: pointer;
+	-webkit-user-select: none;
+	display: inline-block;
+	line-height: 1em;
+	border-bottom: 3px solid rgba(#fff, 0);
+	opacity: 0.36;
+	bottom: $edge;
+}
+
+.about--close {
+	opacity: 1;
+}
+
+.about:hover {
+	opacity: 1;
+	border-bottom: 3px solid rgba(#fff, 0.94);
+}
